@@ -1,0 +1,38 @@
+<table>
+  <tr>
+    <td style="text-align: center; width: 50%; vertical-align: top">
+      <iframe width="850" height="850" frameborder="0" scrolling="no" marginheight="0"
+              marginwidth="0"
+              [src]="sanitizer.bypassSecurityTrustResourceUrl(mapSource)"
+              style="border: 1px solid black; margin: 0 auto auto auto;"></iframe>
+    </td>
+
+    <td style="text-align: center; width: 50%;">
+      <div class="card">
+        <h1>Add plant</h1>
+        <mat-form-field>
+          <input matInput placeholder="Plant name" #name>
+        </mat-form-field>
+
+        <div style="text-align: right">
+          <button mat-raised-button class="mat-primary button-with-margin" (click)="addPlant()">
+            Add Plant
+          </button>
+        </div>
+      </div>
+
+      <div class="card" style="height: 600px; overflow: auto">
+        <h1>Plants in base</h1>
+
+        <div style="text-align: left" *ngFor="let plant of plantList">
+          <button mat-raised-button class="button-with-margin"
+                  (click)="nameReveal(plant)">
+            Show me
+          </button>
+
+          <b>{{plant.name}}</b>, distance - {{roundNumber(plant.distance)}}
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>

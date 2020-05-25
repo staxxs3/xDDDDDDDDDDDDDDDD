@@ -1,0 +1,17 @@
+* {
+  font-family: arial, serif;
+}
+
+mat-form-field {
+  display: block;
+  margin: auto;
+}
+
+#mapid {
+  height: 180px;
+}
+
+.button-with-margin {
+  margin: 5px !important;
+}
+
